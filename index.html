@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hidayah🤍Nashwa</title>
+    <link href="style.css" rel="stylesheet" />
+    <img src="nashwa cantik.webp" alt="">
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a onclick="reRender()" id="HOME">HOME</a>
+        <a onclick="darkMode()" id="MODE">PENCET INI</a>
+      </nav>
+      <h1>Hidayah🤍Nashwa</h1>
+      <p class="anjay" id="anjay"></p>
+    </div>
+
+    <!-- instalizing function script -->
+    <script>
+      let body = document.body;
+      let ANJAY = document.getElementById("anjay");
+      let MODE = document.getElementById("MODE");
+      let HOME = document.getElementById("HOME");
+
+      const darklimit = 5;
+      let darkcounter = 0;
+      let darkRemainingLeft;
+
+      function darkMode() {
+        if (darkRemainingLeft == 1) {
+          ANJAY.textContent = "I LOVEE YOUU SO MUCH SAYAANGG🤍🤍🤍🤍🤍";
+          MODE.style.display = "none";
+          HOME.textContent = "RESTART";
+          return;
+        }
+        darkcounter += 1;
+        darkRemainingLeft = darklimit - darkcounter;
+
+        // render ke anjay element
+        ANJAY.textContent = `PENCET LAGI ${darkcounter}x, KURANG ${darkRemainingLeft}`;
+
+        body.classList.toggle("dark");
+      }
+      function reRender() {
+        location.reload();
+      }
+    </script>
+  </body>
+</html>
